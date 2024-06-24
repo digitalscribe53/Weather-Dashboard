@@ -1,0 +1,48 @@
+.my-form-class {
+    height: 96%;
+    background-color: #77adcc;
+    color: black;
+}
+
+.my-cards-class {
+    height: 96%;
+    background-color: black;
+    color: white;
+    
+    
+}
+
+.navbar {
+    height: 60px;
+    justify-content: right;
+    background: linear-gradient(to right, #1C6EA4 0%, #2388CB 42%, #144E75 100%);
+    width: 100%;
+    padding-right: 120px;
+    color: white;
+    
+}
+
+.current-top-row {
+    height: 340px;
+    border: solid #172a5d 2px;
+}
+
+.style-btn {
+    background-color: gray;
+    color: white;
+}
+
+.my-cards-class .card {
+    margin: 1rem;
+}
+
+.my-cards-class .row {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+#uniqueBox .card {
+    margin: 5px;
+    padding: 2px;
+}

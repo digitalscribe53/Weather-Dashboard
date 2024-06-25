@@ -9,7 +9,7 @@ One unexpected challenge during this project was dealing with an api key while c
 The application is intented to be run in a browser. 
 
 ## Screenshot of Page
-![image](./assets/images/weather-dashboard-snip_.jpg)
+![image](/images/weather-dashboard-snip_.jpg)
 
 ## Link to Live Page 
 ![link](https://digitalscribe53.github.io/Weather-Dashboard/) 

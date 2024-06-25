@@ -93,7 +93,7 @@ function fetchWeather(cityInput) {
                             <div class="card" style="width: 10rem;">
                                 <div class="card-body">
                                     <h5 class="card-title">${forecastDate}</h5>
-                                    <img src="http://openweathermap.org/img/wn/${forecastIcon}@2x.png" alt="Weather icon">
+                                    <img src="https://openweathermap.org/img/wn/${forecastIcon}@2x.png" alt="Weather icon">
                                     <p class="card-text">Temp: ${forecastTemp} °F</p>
                                     <p class="card-text">Wind: ${forecastWind} mph</p>
                                     <p class="card-text">Humidity: ${forecastHumidity} %</p>

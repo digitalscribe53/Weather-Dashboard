@@ -1,9 +1,13 @@
+document.addEventListener('DOMContentLoaded', function () {
+    getApi();
+});
+
 const foreCast = document.getElementById('forecast');
 const fetchButton = document.getElementById('fetch-btn');
 const weatherDataArray = [];
 const fetchBtn = document.getElementById('fetch-btn');
 const searchInput = document.getElementById('search-bar');
-// const apiKey = process.env.API-KEY;
+// const apiKey = process.env.API_KEY;
 const date = new Date();
 let day = date.getDate();
 let month = date.getMonth() + 1;
@@ -22,7 +26,6 @@ function renderCityButton(cityName) {
     document.querySelector('.my-form-class .d-grid').appendChild(cityButton);
 }
 
-
 // To fetch and display weather data
 // Accept user input for city name, convert to geographic coordinates using OpenWeather API, then fetch weather forecast
 // Display weather in two areas: current weather on top and 5-day forecast on individual cards below
@@ -38,7 +41,12 @@ function fetchWeather(cityInput) {
     const cityConvertToGeo = `https://api.openweathermap.org/geo/1.0/direct?q=${userCityInput},${userStateInput},${userCountryInput}&limit=5&appid=1032d99e11ef3e77475aff7cae477682`;
 
     fetch(cityConvertToGeo)
-        .then(response => response.json())
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok ' + response.statusText);
+            }
+            return response.json();
+        })
         .then(data => {
             if (data.length > 0) {
                 const cityLat = data[0].lat;
@@ -50,7 +58,12 @@ function fetchWeather(cityInput) {
                 throw new Error('No coordinates found for given city');
             }
         })
-        .then(response => response.json())
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok ' + response.statusText);
+            }
+            return response.json();
+        })
         .then(data => {
             console.log('API Data:', data);
 
@@ -131,9 +144,7 @@ function getApi() {
         fetchWeather(cityInput);
     });
 
-// To iterate over each city data object stored in retrievedArray
-// Extract city name and create a button for each city
+    // To iterate over each city data object stored in retrievedArray
+    // Extract city name and create a button for each city
     retrievedArray.forEach(cityData => renderCityButton(cityData.city));
 }
-
-getApi();

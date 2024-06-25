@@ -35,7 +35,7 @@ function fetchWeather(cityInput) {
     const userStateInput = cityInputSpliced[1] || '';
     const userCountryInput = cityInputSpliced[2] || '';
 
-    const cityConvertToGeo = `http://api.openweathermap.org/geo/1.0/direct?q=${userCityInput},${userStateInput},${userCountryInput}&limit=5&appid=1032d99e11ef3e77475aff7cae477682`;
+    const cityConvertToGeo = `https://api.openweathermap.org/geo/1.0/direct?q=${userCityInput},${userStateInput},${userCountryInput}&limit=5&appid=1032d99e11ef3e77475aff7cae477682`;
 
     fetch(cityConvertToGeo)
         .then(response => response.json())
@@ -67,7 +67,7 @@ function fetchWeather(cityInput) {
                 topWeatherBox.innerHTML = `
                     <div>
                         <h2>${currentCity} ${currentDate}</h2>
-                        <img src="http://openweathermap.org/img/wn/${currentIcon}@2x.png" alt="Weather icon">
+                        <img src="https://openweathermap.org/img/wn/${currentIcon}@2x.png" alt="Weather icon">
                         <p>Temp: ${currentTemp} °F</p>
                         <p>Wind: ${currentWind} mph</p>
                         <p>Humidity: ${currentHumidity} %</p>
